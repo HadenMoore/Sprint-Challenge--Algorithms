@@ -125,12 +125,14 @@ class SortingRobot:
                         continue 
                     elif self.compare_item() == -1: 
                         continue 
+                    elif self.compare_item() == 0: 
+                        continue
                     elif self.compare_item() == None: 
                         self.swap_item()
                         break 
         else: 
             break
-        
+
         pass
 
 
