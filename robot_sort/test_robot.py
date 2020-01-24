@@ -59,3 +59,6 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# After Running test_robot.py 
+    # Ran 5 tests in 0.126s # OK
