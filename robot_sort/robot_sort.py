@@ -98,45 +98,37 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        
-        self.set_light_on()
-        self.swap_item()
-        # While Robot is on, do stuff. 
-        while self.light_is_on():
-            # While Robot moves right, move right and swap current item if held item is larger. 
-            while self.can_move_right():
-                self.move_right()
-                if self.compare_item() == 1:
-                    self.swap_item()
-                elif self.compare_item() == -1: 
-                    continue
-                elif self.compare_item() == 0: 
-                    continue 
-                elif self.compare_item() == None:
-                    if self.can_move_right():
-                        self.swap_item()
-                    else: 
-                        self.set_light_off()
-                        break
 
-            if self.set_light_on():
+        self.set_light_on() # Turn on the light
+        while self.light_is_on(): # While light is on, Begin Loop
+            self.set_light_off() # Looper Switch
+            # PART 1
+            while self.can_move_right(): # If Robot Can Move Right
+                self.swap_item() # Pick up item
+                self.move_right() # Begin iteration
+            # PART 2
+                if self.compare_item() == 1: # compare values
+                    # reset item/position
+                    self.swap_item()
+                    self.move_left() 
+                    self.swap_item() 
+                    self.move_right()
+                    self.set_light_on() # looper switch
+                else:
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+
+            if self.light_is_on():
                 while self.can_move_left():
                     self.move_left()
-                    if self.comapre_item() == 1: 
-                        continue 
-                    elif self.compare_item() == -1: 
-                        continue 
-                    elif self.compare_item() == 0: 
-                        continue
-                    elif self.compare_item() == None: 
-                        self.swap_item()
-                        break 
-            else: 
-                break
 
-
-
-
+            """ HELPER REFERENCE PSUDOCODE, iterative sort
+            for i in range(0, len(arr)-1): PART A
+                PART B
+                if arr[i] > arr[i+1]: 
+                    arr[i], arr[i+1] = arr[i+1], arr[i]
+            """
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
