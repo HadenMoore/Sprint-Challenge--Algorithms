@@ -57,5 +57,5 @@ class Test(unittest.TestCase):
     #     self.assertLess(robot._time, 28308)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
