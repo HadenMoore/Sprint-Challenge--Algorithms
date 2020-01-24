@@ -133,7 +133,8 @@ class SortingRobot:
         else: 
             break
 
-        pass
+
+
 
 
 if __name__ == "__main__":
