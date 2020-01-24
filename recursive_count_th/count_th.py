@@ -24,7 +24,7 @@ def count_th(word):
         return 0 
     elif word[:2] == substring: 
         return 1 + count_th(word[1:])
-        else: 
+    else: 
             return count_th(word[1:])
         return result
     
@@ -36,5 +36,5 @@ def count_th(word):
     word = ""
     print(count_th(word))
 
-    
+
     pass
