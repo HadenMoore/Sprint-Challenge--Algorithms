@@ -130,8 +130,8 @@ class SortingRobot:
                     elif self.compare_item() == None: 
                         self.swap_item()
                         break 
-        else: 
-            break
+            else: 
+                break
 
 
 
